@@ -10,7 +10,9 @@ app.use(cors())
 
 app.get('/awesome/applicant', async (req: Request, res: Response) => {
   try {
-    const applicant = await db.one('SELECT * FROM applicant WHERE id = $1', [1])
+    const applicant = await db.one(
+      'SELECT * FROM applicant ORDER BY id ASC LIMIT 1'
+    )
     console.log(applicant) // Log data here
     res.json(applicant)
     console.log(`Response sent: ${JSON.stringify(applicant)}`) // Log response here
