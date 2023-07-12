@@ -3,7 +3,7 @@ import { db } from './db'
 import cors from 'cors'
 
 const app = express()
-const port = process.env.PORT || 3000
+// const port = process.env.PORT || 3000
 
 app.use(express.json())
 app.use(cors())
@@ -96,6 +96,8 @@ app.delete('/awesome/applicant/:id', async (req: Request, res: Response) => {
   }
 })
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Server is running at http://localhost:${port}`)
+// })
+
+export default app
